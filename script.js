@@ -42,7 +42,6 @@ function presentVideo(videoNum) {
         // presentAudio = "present_audio/test.m4a";
         presentButton = document.getElementById("present-1-button");
         nextPresentButton = document.getElementById("present-2-button");
-        alert("Are you ready to join Noelle, Pim, and Pom?")
     } else if (videoNum == 2) {
         videoPicture = document.getElementById("present-2-picture");
         presentAudio = "present_audio/fair_use.m4a";
