@@ -1,1 +1,1 @@
-**Elf Crimes: Find the Fake Present** is a festive game that teaches you about law concepts relating to technology. It is a final project for the CPSC 183 (Law, Technology, and Culture) at Yale University.
+**Elf Crimes: Find the Fake Present** is a festive game that teaches you about law concepts relating to technology. It is a final project for CPSC 183 (Law, Technology, and Culture) at Yale University.
