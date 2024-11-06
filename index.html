@@ -33,6 +33,14 @@
       <img src="images/Noelle_with_elves/telling_a_story.jpeg" id="present-1-picture" class="present-picture">
       <img src="images/Noelle_with_elves/gingerbread_house.jpeg" id="present-2-picture" class="present-picture">
 
+      <div id="quiz-popup" class="popup">
+        <div class="popup-content">
+          <p id="question-text"></p>
+          <form id="options-form"></form>
+          <button class="submit-answer" onclick="submitAnswer()">Submit</button>
+        </div>
+      </div>
+
       <!-- Skip button -->
       <button id="skip-button" onclick="skipAudio()">Skip</button>
 
@@ -46,6 +54,7 @@
       </button>
     </div>
 
+    <script src="questions.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
