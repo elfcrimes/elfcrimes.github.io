@@ -1,50 +1,75 @@
 // Go from welcome screen to game screen
 function startGame() {
     // Hide the welcome screen
-    document.getElementById('welcome-screen').classList.remove('active');
-    document.getElementById('welcome-screen').style.display = 'none';
-    
+    document.getElementById("welcome-screen").classList.remove("active");
+    document.getElementById("welcome-screen").style.display = "none";
+
     // Show the game screen
-    document.getElementById('game-screen').classList.add('active');
-    document.getElementById('game-screen').style.display = 'block';
+    document.getElementById("game-screen").classList.add("active");
+    document.getElementById("game-screen").style.display = "block";
+    
+    const presentsImage = document.getElementById("presents");
+    presentsImage.style.display = "none";
+
+    firstPresentButton = document.getElementById("present-1-button");
+    firstPresentButton.style.display = "none";
+
+    // Play the welcome video
+    videoPicture = document.getElementById("intro-picture");
+    videoPicture.style.display = "block";
+
+    const audio = new Audio("present_audio/intro.m4a");
+    audio.play();
+
+    audio.addEventListener("ended", () => {
+        videoPicture.style.display = "none";
+        presentsImage.style.display = "block";
+        firstPresentButton.style.display = "block";
+    });
 }
 
 function presentVideo(videoNum) {
-    const presentsImage = document.getElementById('presents');
-    let presentAudio = '';
-    let videoPicture = '';
+    const presentsImage = document.getElementById("presents");
+    let presentAudio = "";
+    let videoPicture = "";
+    let presentButton = "";
+    let nextPresentButton = "";
     console.log(videoNum);
     
     if (videoNum == 1) {
         videoPicture = document.getElementById("present-1-picture");
-        presentAudio = 'present_audio/CFAA.m4a';
+        presentAudio = "present_audio/CFAA.m4a";
+        // presentAudio = "present_audio/test.m4a";
+        presentButton = document.getElementById("present-1-button");
+        nextPresentButton = document.getElementById("present-2-button");
         alert("Are you ready to join Noelle, Pim, and Pom?")
+    } else if (videoNum == 2) {
+        videoPicture = document.getElementById("present-2-picture");
+        presentAudio = "present_audio/fair_use.m4a";
+        presentButton = document.getElementById("present-2-button");
     }
 
+    presentButton.style.display = "none";
     videoPicture.style.display = "block";
     presentsImage.style.display = "none";
-
-    // Hide all buttons with the class 'present'
-    const presentButtons = document.querySelectorAll('.present');
-    presentButtons.forEach(button => button.style.display = 'none');
 
     const audio = new Audio(presentAudio);
     audio.play();
 
-    audio.addEventListener('ended', () => {
+    audio.addEventListener("ended", () => {
         videoPicture.style.display = "none";
         presentsImage.style.display = "block";
+        nextPresentButton.style.display = "block";
     });
 }
 
 // Initialize screens
 window.onload = function() {
-    // Only show the welcome screen on load
-    document.getElementById('welcome-screen').style.display = 'block';
-    document.getElementById('game-screen').style.display = 'none';
+    document.getElementById("welcome-screen").style.display = "block";
+    document.getElementById("game-screen").style.display = "none";
 
-    // document.getElementById('welcome-screen').style.display = 'none';
-    // document.getElementById('game-screen').style.display = 'block';
+    // document.getElementById("welcome-screen").style.display = "none";
+    // document.getElementById("game-screen").style.display = "block";
 }
 
 // // Pause and play the video, and change the button text
