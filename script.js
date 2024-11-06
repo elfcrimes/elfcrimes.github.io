@@ -1,3 +1,5 @@
+let audio;
+
 // Go from welcome screen to game screen
 function startGame() {
     // Hide the welcome screen
@@ -18,7 +20,7 @@ function startGame() {
     videoPicture = document.getElementById("intro-picture");
     videoPicture.style.display = "block";
 
-    const audio = new Audio("present_audio/intro.m4a");
+    audio = new Audio("present_audio/intro.m4a");
     audio.play();
 
     audio.addEventListener("ended", () => {
@@ -30,6 +32,7 @@ function startGame() {
 
 function presentVideo(videoNum) {
     const presentsImage = document.getElementById("presents");
+    const skipButton = document.getElementById("skip-button");
     let presentAudio = "";
     let videoPicture = "";
     let presentButton = "";
@@ -47,19 +50,29 @@ function presentVideo(videoNum) {
         presentAudio = "present_audio/fair_use.m4a";
         presentButton = document.getElementById("present-2-button");
     }
-
-    presentButton.style.display = "none";
     videoPicture.style.display = "block";
+    skipButton.style.display = "block";
     presentsImage.style.display = "none";
+    presentButton.style.display = "none";
 
-    const audio = new Audio(presentAudio);
+    audio = new Audio(presentAudio);
     audio.play();
 
     audio.addEventListener("ended", () => {
         videoPicture.style.display = "none";
+        skipButton.style.display = "none";
         presentsImage.style.display = "block";
         nextPresentButton.style.display = "block";
     });
+}
+
+function skipAudio() {
+    if (audio && !audio.ended) {
+        audio.currentTime = audio.duration; // Skip to the end
+    }
+
+    const skipButton = document.getElementById("skip-button");
+    skipButton.style.display = "none";
 }
 
 // Initialize screens
