@@ -52,7 +52,41 @@ function presentVideo(videoNum) {
         videoPicture = document.getElementById("present-2-picture");
         presentAudio = "present_audio/fair_use.m4a";
         presentButton = document.getElementById("present-2-button");
+        nextPresentButton = document.getElementById("present-3-button");
+    } else if (videoNum == 3) {
+        videoPicture = document.getElementById("present-3-picture");
+        presentAudio = "present_audio/piracy.m4a";
+        presentButton = document.getElementById("present-3-button");
+        nextPresentButton = document.getElementById("present-4-button");
+    } else if (videoNum == 4) {
+        videoPicture = document.getElementById("present-4-picture");
+        presentAudio = "present_audio/DMCA.m4a";
+        presentButton = document.getElementById("present-4-button");
+        nextPresentButton = document.getElementById("present-5-button");
+    } else if (videoNum == 5) {
+        videoPicture = document.getElementById("present-5-picture");
+        presentAudio = "present_audio/section_230.m4a";
+        presentButton = document.getElementById("present-5-button");
+        nextPresentButton = document.getElementById("present-6-button");
+    } else if (videoNum == 6) {
+        videoPicture = document.getElementById("present-6-picture");
+        presentAudio = "present_audio/freedom_of_speech.m4a";
+        presentButton = document.getElementById("present-6-button");
+        nextPresentButton = document.getElementById("present-7-button");
+    } else if (videoNum == 7) {
+        videoPicture = document.getElementById("present-7-picture");
+        presentAudio = "present_audio/defamation.m4a";
+        presentButton = document.getElementById("present-7-button");
+        nextPresentButton = document.getElementById("present-8-button");
+    } else if (videoNum == 8) {
+        presentsImage.style.display = "none";
+        presentButton.style.display = "none";
+        nextPresentButton.style.display = "none";
+
+        goToCoalPresent();
+        return;
     }
+
     videoPicture.style.display = "block";
     skipButton.style.display = "block";
     presentsImage.style.display = "none";
@@ -64,6 +98,27 @@ function presentVideo(videoNum) {
     audio.addEventListener("ended", () => {
         showQuizPopup();
     });
+}
+
+function goToCoalPresent() {
+    videoPicture = document.getElementById("coal-picture");
+    videoPicture.style.display = "block";
+
+    audio = new Audio("present_audio/coal_present.m4a");
+    audio.play();
+
+    audio.addEventListener("ended", () => {
+        goToWinPage();
+    });
+}
+
+function goToWinPage() {
+    videoPicture.style.display = "none";
+    videoPicture = document.getElementById("win-picture");
+    videoPicture.style.display = "block";
+
+    audio = new Audio("present_audio/win.m4a");
+    audio.play();
 }
 
 function skipAudio() {
@@ -130,4 +185,7 @@ function closeQuizPopup() {
 window.onload = function() {
     document.getElementById("welcome-screen").style.display = "block";
     document.getElementById("game-screen").style.display = "none";
+
+    // document.getElementById("welcome-screen").style.display = "none";
+    // document.getElementById("game-screen").style.display = "block";
 }
