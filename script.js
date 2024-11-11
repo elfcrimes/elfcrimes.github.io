@@ -155,27 +155,49 @@ function showQuizPopup() {
 }
 
 function submitAnswer() {
+    clearFeedback()
     const optionsForm = document.getElementById("options-form");
     const selectedOption = optionsForm.querySelector('input[name="answer"]:checked');
-    
+
     if (selectedOption) {
         const answerIndex = parseInt(selectedOption.value);
 
         if (answerIndex === questions[questionIndex].answer) {
-            alert("Correct!");
-            questionIndex += 1;
-            closeQuizPopup();
+            showFeedback("images/correct.jpeg", "Correct!", true);
+            setTimeout(() => {
+                questionIndex += 1;
+                closeQuizPopup();
 
-            videoPicture.style.display = "none";
-            skipButton.style.display = "none";
-            presentsImage.style.display = "block";
-            nextPresentButton.style.display = "block";
+                videoPicture.style.display = "none";
+                skipButton.style.display = "none";
+                presentsImage.style.display = "block";
+                nextPresentButton.style.display = "block";
+                
+                clearFeedback();
+            }, 1500);
         } else {
-            alert("Incorrect, please try again.");
+            showFeedback("images/incorrect.jpeg", "Incorrect, please try again.", false);
         }
     } else {
-        alert("Please select an answer.");
+        showFeedback("images/shrug.jpeg", "Please select an answer.", false);
     }
+}
+
+// Function to display feedback image and message
+function showFeedback(imageSrc, message, isCorrect) {
+    const feedbackContainer = document.getElementById("feedback-container");
+    feedbackContainer.innerHTML = `
+        <img src="${imageSrc}" style="width: 300px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
+        <p style="text-align: center; font-weight: bold; color: ${isCorrect ? 'green' : 'red'};">${message}</p>
+    `;
+    feedbackContainer.style.display = "block";
+}
+
+// Function to clear the feedback display
+function clearFeedback() {
+    const feedbackContainer = document.getElementById("feedback-container");
+    feedbackContainer.style.display = "none";
+    feedbackContainer.innerHTML = "";
 }
 
 function closeQuizPopup() {
@@ -185,7 +207,4 @@ function closeQuizPopup() {
 window.onload = function() {
     document.getElementById("welcome-screen").style.display = "block";
     document.getElementById("game-screen").style.display = "none";
-
-    // document.getElementById("welcome-screen").style.display = "none";
-    // document.getElementById("game-screen").style.display = "block";
 }
