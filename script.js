@@ -29,7 +29,7 @@ function startGame() {
     videoPicture = document.getElementById("intro-picture");
     videoPicture.style.display = "block";
 
-    audio = new Audio("present_audio/intro.mp3");
+    audio = new Audio("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/intro.mp3");
     audio.play();
 
     audio.addEventListener("ended", () => {
@@ -45,37 +45,37 @@ function presentVideo(videoNum) {
     
     if (videoNum == 1) {
         videoPicture = document.getElementById("present-1-picture");
-        presentAudio = "present_audio/CFAA.mp3";
+        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/CFAA.mp3";
         presentButton = document.getElementById("present-1-button");
         nextPresentButton = document.getElementById("present-2-button");
     } else if (videoNum == 2) {
         videoPicture = document.getElementById("present-2-picture");
-        presentAudio = "present_audio/fair_use.mp3";
+        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/fair_use.mp3";
         presentButton = document.getElementById("present-2-button");
         nextPresentButton = document.getElementById("present-3-button");
     } else if (videoNum == 3) {
         videoPicture = document.getElementById("present-3-picture");
-        presentAudio = "present_audio/piracy.mp3";
+        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/piracy.mp3";
         presentButton = document.getElementById("present-3-button");
         nextPresentButton = document.getElementById("present-4-button");
     } else if (videoNum == 4) {
         videoPicture = document.getElementById("present-4-picture");
-        presentAudio = "present_audio/DMCA.mp3";
+        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/DMCA.mp3";
         presentButton = document.getElementById("present-4-button");
         nextPresentButton = document.getElementById("present-5-button");
     } else if (videoNum == 5) {
         videoPicture = document.getElementById("present-5-picture");
-        presentAudio = "present_audio/section_230.mp3";
+        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/section_230.mp3";
         presentButton = document.getElementById("present-5-button");
         nextPresentButton = document.getElementById("present-6-button");
     } else if (videoNum == 6) {
         videoPicture = document.getElementById("present-6-picture");
-        presentAudio = "present_audio/freedom_of_speech.mp3";
+        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/freedom_of_speech.mp3";
         presentButton = document.getElementById("present-6-button");
         nextPresentButton = document.getElementById("present-7-button");
     } else if (videoNum == 7) {
         videoPicture = document.getElementById("present-7-picture");
-        presentAudio = "present_audio/defamation.mp3";
+        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/defamation.mp3";
         presentButton = document.getElementById("present-7-button");
         nextPresentButton = document.getElementById("present-8-button");
     } else if (videoNum == 8) {
@@ -104,7 +104,7 @@ function goToCoalPresent() {
     videoPicture = document.getElementById("coal-picture");
     videoPicture.style.display = "block";
 
-    audio = new Audio("present_audio/coal_present.mp3");
+    audio = new Audio("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/coal_present.mp3");
     audio.play();
 
     audio.addEventListener("ended", () => {
@@ -117,7 +117,7 @@ function goToWinPage() {
     videoPicture = document.getElementById("win-picture");
     videoPicture.style.display = "block";
 
-    audio = new Audio("present_audio/win.mp3");
+    audio = new Audio("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/win.mp3");
     audio.play();
 }
 
