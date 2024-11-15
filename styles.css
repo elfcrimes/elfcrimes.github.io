@@ -186,7 +186,7 @@ img {
 }
 
 .border-container {
-    background-image: url("images/gold.png");
+    background-image: url("./images/gold.png");
     background-repeat: repeat;
     padding: 10px;
     border-radius: 20px;
