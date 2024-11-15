@@ -66,6 +66,8 @@ img {
 
 .present-picture {
     display: none;
+    margin-top: 85px;
+    width: 90%;
 }
 
 .present-button {
@@ -243,6 +245,7 @@ img {
     height: 85px;
     background-color: black;
 }
+
 #presents {
     display: block;
     margin-top: 85px;
