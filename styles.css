@@ -18,7 +18,7 @@ html, body {
 }
 
 .content {
-    position: relative; /* Ensure content is positioned relative to the parent */
+    position: relative;
     width: 100%;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
@@ -28,7 +28,7 @@ html, body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 50px;       /* Space from the bottom */
+    margin-bottom: 50px;
 }
 
 .welcome-title {
@@ -58,10 +58,10 @@ html, body {
 
 img {
     display: block;
-    width: 100%;  /* Make the image fit the width of the screen */
-    height: 100%;  /* Make the image fit the height of the screen */
-    object-fit: cover; /* Ensure the image covers the screen without stretching */
-    object-position: center; /* Center the image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .present-picture {
@@ -226,4 +226,25 @@ img {
 
 .submit-answer:hover {
     color: black;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.black-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background-color: black;
+}
+#presents {
+    display: block;
+    margin-top: 85px;
+    width: 90%;
 }
