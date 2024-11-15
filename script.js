@@ -163,7 +163,7 @@ function submitAnswer() {
         const answerIndex = parseInt(selectedOption.value);
 
         if (answerIndex === questions[questionIndex].answer) {
-            showFeedback("./images/correct.jpeg", "Correct!", true);
+            showFeedback("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/images/correct.jpeg", "Correct!", true);
             setTimeout(() => {
                 questionIndex += 1;
                 closeQuizPopup();
@@ -176,10 +176,10 @@ function submitAnswer() {
                 clearFeedback();
             }, 1500);
         } else {
-            showFeedback("./images/incorrect.jpeg", "Incorrect, please try again.", false);
+            showFeedback("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/images/incorrect.jpeg", "Incorrect, please try again.", false);
         }
     } else {
-        showFeedback("./images/shrug.jpeg", "Please select an answer.", false);
+        showFeedback("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/images/shrug.jpeg", "Please select an answer.", false);
     }
 }
 
