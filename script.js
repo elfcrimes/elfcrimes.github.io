@@ -40,7 +40,6 @@ function startGame() {
 }
 
 function presentVideo(videoNum) {
-    let presentAudio = "";
     let presentVideoSrc = "";
     
     if (videoNum == 1) {
