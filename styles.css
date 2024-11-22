@@ -156,7 +156,7 @@ img {
     cursor: pointer;
 }
 
-#skip-button {
+#skip-button, #skip-button-audio {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -170,7 +170,7 @@ img {
     cursor: pointer;
 }
 
-#skip-button:hover {
+#skip-button:hover, #skip-button-audio:hover {
     color: black;
 }
 
@@ -185,13 +185,6 @@ img {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.border-container {
-    background-image: url("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/images/gold.png");
-    background-repeat: repeat;
-    padding: 10px;
-    border-radius: 20px;
 }
 
 .popup-content {
@@ -250,4 +243,14 @@ img {
     display: block;
     margin-top: 85px;
     width: 90%;
+}
+
+.fullscreen-video {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
 }
