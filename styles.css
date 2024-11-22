@@ -156,7 +156,7 @@ img {
     cursor: pointer;
 }
 
-#skip-button, #skip-button-audio {
+#skip-button {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -170,7 +170,7 @@ img {
     cursor: pointer;
 }
 
-#skip-button:hover, #skip-button-audio:hover {
+#skip-button:hover {
     color: black;
 }
 
