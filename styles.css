@@ -187,13 +187,6 @@ img {
     z-index: 1000;
 }
 
-.border-container {
-    background-image: url("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/images/gold.png");
-    background-repeat: repeat;
-    padding: 10px;
-    border-radius: 20px;
-}
-
 .popup-content {
     background-color: white;
     padding: 30px;
@@ -250,4 +243,14 @@ img {
     display: block;
     margin-top: 85px;
     width: 90%;
+}
+
+.fullscreen-video {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
 }

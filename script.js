@@ -3,11 +3,11 @@ let questionIndex = 0;
 
 const skipButton = document.getElementById("skip-button");
 const presentsImage = document.getElementById("presents");
+const videoContainer = document.querySelector(".video-container");
 
 let videoPicture = "";
 let presentButton = "";
 let nextPresentButton = "";
-
 
 // Go from welcome screen to game screen
 function startGame() {
@@ -40,42 +40,34 @@ function startGame() {
 }
 
 function presentVideo(videoNum) {
-    let presentAudio = "";
-    console.log(videoNum);
+    let presentVideoSrc = "";
     
     if (videoNum == 1) {
-        videoPicture = document.getElementById("present-1-picture");
-        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/CFAA.mp3";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/CFAA.mp4";
         presentButton = document.getElementById("present-1-button");
         nextPresentButton = document.getElementById("present-2-button");
     } else if (videoNum == 2) {
-        videoPicture = document.getElementById("present-2-picture");
-        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/fair_use.mp3";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/fair_use.mp4";
         presentButton = document.getElementById("present-2-button");
         nextPresentButton = document.getElementById("present-3-button");
     } else if (videoNum == 3) {
-        videoPicture = document.getElementById("present-3-picture");
-        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/piracy.mp3";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/piracy.mp4";
         presentButton = document.getElementById("present-3-button");
         nextPresentButton = document.getElementById("present-4-button");
     } else if (videoNum == 4) {
-        videoPicture = document.getElementById("present-4-picture");
-        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/DMCA.mp3";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/DMCA.mp4";
         presentButton = document.getElementById("present-4-button");
         nextPresentButton = document.getElementById("present-5-button");
     } else if (videoNum == 5) {
-        videoPicture = document.getElementById("present-5-picture");
-        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/section_230.mp3";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/section_230.mp4";
         presentButton = document.getElementById("present-5-button");
         nextPresentButton = document.getElementById("present-6-button");
     } else if (videoNum == 6) {
-        videoPicture = document.getElementById("present-6-picture");
-        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/freedom_of_speech.mp3";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/freedom_of_speech.mp4";
         presentButton = document.getElementById("present-6-button");
         nextPresentButton = document.getElementById("present-7-button");
     } else if (videoNum == 7) {
-        videoPicture = document.getElementById("present-7-picture");
-        presentAudio = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/defamation.mp3";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/defamation.mp4";
         presentButton = document.getElementById("present-7-button");
         nextPresentButton = document.getElementById("present-8-button");
     } else if (videoNum == 8) {
@@ -87,17 +79,21 @@ function presentVideo(videoNum) {
         return;
     }
 
-    videoPicture.style.display = "block";
-    skipButton.style.display = "block";
+    const videoElement = document.createElement("video");
+    videoElement.src = presentVideoSrc;
+    videoElement.classList.add("fullscreen-video"); // Apply the class for consistent styling
+    videoElement.autoplay = true;
+    videoElement.controls = true;
+
+    document.body.appendChild(videoElement);
+
     presentsImage.style.display = "none";
     presentButton.style.display = "none";
 
-    audio = new Audio(presentAudio);
-    audio.play();
-
-    audio.addEventListener("ended", () => {
+    videoElement.addEventListener("ended", () => {
+        document.body.removeChild(videoElement); // Remove the video after it ends
         showQuizPopup();
-    });
+    });   
 }
 
 function goToCoalPresent() {
@@ -126,7 +122,6 @@ function skipAudio() {
         audio.currentTime = audio.duration; // Skip to the end
     }
 
-    const skipButton = document.getElementById("skip-button");
     skipButton.style.display = "none";
 }
 
