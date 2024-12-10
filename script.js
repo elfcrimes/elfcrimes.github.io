@@ -22,18 +22,22 @@ function startGame() {
     const presentsImage = document.getElementById("presents");
     presentsImage.style.display = "none";
 
-    firstPresentButton = document.getElementById("present-1-button");
+    const firstPresentButton = document.getElementById("present-1-button");
     firstPresentButton.style.display = "none";
 
-    // Play the welcome video
-    videoPicture = document.getElementById("intro-picture");
-    videoPicture.style.display = "block";
+    skipButton.style.display = "none";
 
-    audio = new Audio("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/intro.mp3");
-    audio.play();
+    let presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/intro.mp4";
+    const videoElement = document.createElement("video");
+    videoElement.src = presentVideoSrc;
+    videoElement.classList.add("fullscreen-video"); // Apply the class for consistent styling
+    videoElement.autoplay = true;
+    videoElement.controls = true;
 
-    audio.addEventListener("ended", () => {
-        videoPicture.style.display = "none";
+    document.body.appendChild(videoElement);
+
+    videoElement.addEventListener("ended", () => {
+        document.body.removeChild(videoElement); // Remove the video after it ends
         presentsImage.style.display = "block";
         firstPresentButton.style.display = "block";
     });
@@ -163,8 +167,6 @@ function submitAnswer() {
                 questionIndex += 1;
                 closeQuizPopup();
 
-                videoPicture.style.display = "none";
-                skipButton.style.display = "none";
                 presentsImage.style.display = "block";
                 nextPresentButton.style.display = "block";
                 
