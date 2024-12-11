@@ -47,34 +47,54 @@ function presentVideo(videoNum) {
     let presentVideoSrc = "";
     
     if (videoNum == 1) {
-        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/CFAA.mp4";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-1.mp4";
         presentButton = document.getElementById("present-1-button");
         nextPresentButton = document.getElementById("present-2-button");
     } else if (videoNum == 2) {
-        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/fair_use.mp4";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-2.mp4";
         presentButton = document.getElementById("present-2-button");
         nextPresentButton = document.getElementById("present-3-button");
     } else if (videoNum == 3) {
-        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/piracy.mp4";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-3.mp4";
         presentButton = document.getElementById("present-3-button");
         nextPresentButton = document.getElementById("present-4-button");
     } else if (videoNum == 4) {
-        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/DMCA.mp4";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-4.mp4";
         presentButton = document.getElementById("present-4-button");
         nextPresentButton = document.getElementById("present-5-button");
     } else if (videoNum == 5) {
-        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/section_230.mp4";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-5.mp4";
         presentButton = document.getElementById("present-5-button");
         nextPresentButton = document.getElementById("present-6-button");
     } else if (videoNum == 6) {
-        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/freedom_of_speech.mp4";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-6.mp4";
         presentButton = document.getElementById("present-6-button");
         nextPresentButton = document.getElementById("present-7-button");
     } else if (videoNum == 7) {
-        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_video/defamation.mp4";
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-7.mp4";
         presentButton = document.getElementById("present-7-button");
         nextPresentButton = document.getElementById("present-8-button");
     } else if (videoNum == 8) {
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-8.mp4";
+        presentButton = document.getElementById("present-8-button");
+        nextPresentButton = document.getElementById("present-9-button");
+    } else if (videoNum == 9) {
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-9.mp4";
+        presentButton = document.getElementById("present-9-button");
+        nextPresentButton = document.getElementById("present-10-button");
+    } else if (videoNum == 10) {
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-10.mp4";
+        presentButton = document.getElementById("present-10-button");
+        nextPresentButton = document.getElementById("present-11-button");
+    } else if (videoNum == 11) {
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-10.mp4";
+        presentButton = document.getElementById("present-11-button");
+        nextPresentButton = document.getElementById("present-12-button");
+    } else if (videoNum == 12) {
+        presentVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/present-10.mp4";
+        presentButton = document.getElementById("present-12-button");
+        nextPresentButton = document.getElementById("present-13-button");
+    } else if (videoNum == 13) {
         presentsImage.style.display = "none";
         presentButton.style.display = "none";
         nextPresentButton.style.display = "none";
@@ -113,12 +133,21 @@ function goToCoalPresent() {
 }
 
 function goToWinPage() {
-    videoPicture.style.display = "none";
-    videoPicture = document.getElementById("win-picture");
-    videoPicture.style.display = "block";
+    // videoPicture.style.display = "none";
+    // videoPicture = document.getElementById("win-picture");
+    // videoPicture.style.display = "block";
 
-    audio = new Audio("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/win.mp3");
-    audio.play();
+    // audio = new Audio("https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/present_audio/win.mp3");
+    // audio.play();
+
+    const winVideoSrc = "https://media.githubusercontent.com/media/elfcrimes/elfcrimes.github.io/refs/heads/main/new_videos/intro.mp4";
+    const videoElement = document.createElement("video");
+    videoElement.src = winVideoSrc;
+    videoElement.classList.add("fullscreen-video"); // Apply the class for consistent styling
+    videoElement.autoplay = true;
+    videoElement.controls = true;
+
+    document.body.appendChild(videoElement);
 }
 
 function skipAudio() {

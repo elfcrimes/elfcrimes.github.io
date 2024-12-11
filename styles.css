@@ -140,6 +140,41 @@ img {
     height: 93px;
 }
 
+#present-9-button {
+    top: 46.3%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+#present-10-button {
+    top: 56.3%;
+    left: 35.5%;
+    width: 110px;
+    height: 85px;
+}
+
+#present-11-button {
+    top: 56.3%;
+    left: 42.5%;
+    width: 80px;
+    height: 140px;
+}
+
+#present-12-button {
+    top: 54%;
+    left: 50%;
+    width: 90px;
+    height: 73px;
+}
+
+#present-13-button {
+    top: 65%;
+    left: 35.5%;
+    width: 80px;
+    height: 100px;
+}
+
 @keyframes blink {
     0% {
         opacity: 1;
